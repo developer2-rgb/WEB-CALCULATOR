@@ -1,0 +1,99 @@
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #1e222b;
+    color: #d8dee9;}
+
+/* রেইনবো গ্লো কালার লুপ অ্যানিমেশন */
+@keyframes rainbowAnimation {
+    0% { border-color: #ff5555; box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(40,45,58,0.6), 0 0 35px rgba(255, 85, 85, 0.6); }
+    20% { border-color: #ffb86c; box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(40,45,58,0.6), 0 0 35px rgba(255, 184, 108, 0.6); }
+    40% { border-color: #f1fa8c; box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(40,45,58,0.6), 0 0 35px rgba(241, 250, 140, 0.6); }
+    60% { border-color: #50fa7b; box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(40,45,58,0.6), 0 0 35px rgba(80, 250, 123, 0.6); }
+    80% { border-color: #8be9fd; box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(40,45,58,0.6), 0 0 35px rgba(139, 233, 253, 0.6); }
+    100% { border-color: #bd93f9; box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(40,45,58,0.6), 0 0 35px rgba(189, 147, 249, 0.6); }
+}
+
+/* নিউমর্ফিক মেইন কার্ড */
+.neumorph-card {
+    background-color: #1e222b;
+    box-shadow: 14px 14px 35px rgba(11, 13, 17, 0.7), 
+                -14px -14px 35px rgba(31, 37, 49, 0.7);
+    border: 2px solid transparent;
+    transition: all 0.5s ease;
+}
+
+/* সাইড থেকে রেইনবো গ্লো লাইট (হোভার ইফেক্ট) */
+.side-rainbow-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 110, 199, 0.1), rgba(139, 233, 253, 0.1), transparent);
+    transition: 0.7s ease;
+    pointer-events: none;
+}
+
+.neumorph-card:hover .side-rainbow-glow {
+    left: 100%;
+}
+
+/* মাউস হোভার করলে বর্ডারে রেইনবো ঘুরবে */
+.neumorph-card:hover {
+    animation: rainbowAnimation 3s infinite linear;
+}
+
+/* স্ক্রিনের যেকোনো জায়গায় ক্লিক করলে রেইনবো ঝলকানি */
+.neumorph-card.clicked-rainbow {
+    animation: rainbowAnimation 1.5s infinite linear !important;
+    transform: scale(1.01);
+}
+
+/* নিউমর্ফিক ডিসপ্লে স্ক্রিন (ভেতরে খোদাই করা লুক) */
+.neumorph-display {
+    background-color: #1e222b;
+    box-shadow: inset 6px 6px 12px rgba(11, 13, 17, 0.8), 
+                inset -6px -6px 12px rgba(31, 37, 49, 0.8);
+}
+
+/* নিউমর্ফিক বাটন (উঁচু বাটন ইফেক্ট) */
+.neumorph-btn {
+    background-color: #1e222b;
+    box-shadow: 6px 6px 12px rgba(11, 13, 17, 0.7), 
+                -6px -6px 12px rgba(31, 37, 49, 0.7);
+    border-radius: 1rem;
+    padding: 0.85rem 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.neumorph-btn:hover {
+    color: #ffffff;
+    box-shadow: 4px 4px 8px rgba(11, 13, 17, 0.7), 
+                -4px -4px 8px rgba(31, 37, 49, 0.7);
+}
+
+/* বাটনে চাপ দিলে বা ক্লিক করলে ভেতরে দেবে যাবে */
+.neumorph-btn:active {
+    box-shadow: inset 4px 4px 8px rgba(11, 13, 17, 0.9), 
+                inset -4px -4px 8px rgba(31, 37, 49, 0.9);
+    transform: translateY(1px);
+}
+
+/* সমান (=) বাটন স্পেশাল অরেঞ্জ নিউমর্ফিক স্টাইল */
+.neumorph-btn-equal {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    box-shadow: 6px 6px 12px rgba(11, 13, 17, 0.7), 
+                -6px -6px 12px rgba(31, 37, 49, 0.7);
+    border-radius: 1rem;
+    padding: 0.85rem 0;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.neumorph-btn-equal:active {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(1px);
+}
